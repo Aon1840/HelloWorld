@@ -10,19 +10,27 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    TextView tvHello;
+    EditText editText2;
+    Button btnCopy;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView tvHello = (TextView) findViewById(R.id.tvHello);
+        initInstances();
+    }
+
+    private void initInstances() {
+        tvHello = (TextView) findViewById(R.id.tvHello);
         tvHello.setText(Html.fromHtml("<b>Attapon</b>"));
 
-        final EditText editText2 = (EditText) findViewById(R.id.editText2);
+        editText2 = (EditText) findViewById(R.id.editText2);
 
-        Button btnCopy = (Button) findViewById(R.id.btnCopy);
+        btnCopy = (Button) findViewById(R.id.btnCopy);
 
         editText2.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -36,11 +44,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnCopy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvHello.setText(editText2.getText());
-            }
-        });
+        btnCopy.setOnClickListener(this);
     }
+
+    @Override
+    public void onClick(View v) {
+        if (v == btnCopy){
+            tvHello.setText(editText2.getText());
+        }
+    }
+
+//    New object for onClickListener
+//    View.OnClickListener onClickListener = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            tvHello.setText(editText2.getText());
+//        }
+//    }
 }
