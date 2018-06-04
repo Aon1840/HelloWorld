@@ -8,12 +8,14 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     TextView tvHello, tvResult;
     EditText editText1, editText2;
     Button btnCopy, btnCalculate;
+    RadioGroup rgOperator;
 
 
     @Override
@@ -52,27 +54,45 @@ public class MainActivity extends AppCompatActivity {
         editText2 = (EditText) findViewById(R.id.editText2);
         tvResult = (TextView) findViewById(R.id.tvResult);
         btnCalculate = (Button) findViewById(R.id.btnCalculate);
+        rgOperator = (RadioGroup) findViewById(R.id.rgOperator);
 
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int val1 = 0;
                 int val2 = 0;
-                int sum;
+                int sum=0;
 
                 try {
                     val1 = Integer.parseInt(editText1.getText().toString());
-                }catch (NumberFormatException n){
+                } catch (NumberFormatException n) {
 
                 }
 
                 try {
                     val2 = Integer.parseInt(editText2.getText().toString());
-                }catch (NumberFormatException n){
+                } catch (NumberFormatException n) {
 
                 }
 
-                sum = val1 + val2;
+                switch (rgOperator.getCheckedRadioButtonId()) {
+                    case R.id.rbPlus:
+                        sum = val1 + val2;
+                        break;
+
+                    case R.id.rbMinus:
+                        sum = val1 - val2;
+                        break;
+
+                    case R.id.rbMultiply:
+                        sum = val1 * val2;
+                        break;
+
+                    case R.id.rbDivide:
+                        sum = val1 / val2;
+                        break;
+                }
+                
                 tvResult.setText(sum + "");
             }
         });
