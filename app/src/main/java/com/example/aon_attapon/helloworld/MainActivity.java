@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                         sum = val1 / val2;
                         break;
                 }
-                
+
                 tvResult.setText(sum + "");
             }
         });
