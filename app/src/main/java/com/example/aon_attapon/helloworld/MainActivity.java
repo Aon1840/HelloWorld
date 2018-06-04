@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     TextView tvHello, tvResult;
@@ -96,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
                 tvResult.setText(sum + "");
                 Log.d("Calculation","Result = "+sum);
+                Toast.makeText(MainActivity.this,"Result = "+sum,Toast.LENGTH_SHORT).show();
             }
         });
     }
