@@ -3,6 +3,7 @@ package com.example.aon_attapon.helloworld;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -94,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 tvResult.setText(sum + "");
+                Log.d("Calculation","Result = "+sum);
             }
         });
     }
