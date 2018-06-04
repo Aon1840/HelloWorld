@@ -10,10 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    TextView tvHello;
-    EditText editText2;
-    Button btnCopy;
+public class MainActivity extends AppCompatActivity {
+    TextView tvHello, tvResult;
+    EditText editText1, editText2;
+    Button btnCopy, btnCalculate;
 
 
     @Override
@@ -25,34 +25,66 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initInstances() {
-        tvHello = (TextView) findViewById(R.id.tvHello);
-        tvHello.setText(Html.fromHtml("<b>Attapon</b>"));
+//        tvHello = (TextView) findViewById(R.id.tvHello);
+//        tvHello.setText(Html.fromHtml("<b>Attapon</b>"));
+//
+//        editText2 = (EditText) findViewById(R.id.editText2);
+//
+//        btnCopy = (Button) findViewById(R.id.btnCopy);
+//
+//        editText2.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//            @Override
+//            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+//                if (actionId == EditorInfo.IME_ACTION_DONE){
+//                    //Copy text in EditText to TextView
+//                    tvHello.setText(editText2.getText());
+//                    return true;
+//                }
+//                return false;
+//            }
+//        });
+//
+//        btnCopy.setOnClickListener(this);
 
+
+//        -------------------------------- Start Mash up here --------------------------------------
+        editText1 = (EditText) findViewById(R.id.editText1);
         editText2 = (EditText) findViewById(R.id.editText2);
+        tvResult = (TextView) findViewById(R.id.tvResult);
+        btnCalculate = (Button) findViewById(R.id.btnCalculate);
 
-        btnCopy = (Button) findViewById(R.id.btnCopy);
-
-        editText2.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE){
-                    //Copy text in EditText to TextView
-                    tvHello.setText(editText2.getText());
-                    return true;
+            public void onClick(View v) {
+                int val1 = 0;
+                int val2 = 0;
+                int sum;
+
+                try {
+                    val1 = Integer.parseInt(editText1.getText().toString());
+                }catch (NumberFormatException n){
+
                 }
-                return false;
+
+                try {
+                    val2 = Integer.parseInt(editText2.getText().toString());
+                }catch (NumberFormatException n){
+
+                }
+
+                sum = val1 + val2;
+                tvResult.setText(sum + "");
             }
         });
-
-        btnCopy.setOnClickListener(this);
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v == btnCopy){
-            tvHello.setText(editText2.getText());
-        }
-    }
+
+//    @Override
+//    public void onClick(View v) {
+//        if (v == btnCopy){
+//            tvHello.setText(editText2.getText());
+//        }
+//    }
 
 //    New object for onClickListener
 //    View.OnClickListener onClickListener = new View.OnClickListener() {
