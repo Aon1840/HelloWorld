@@ -45,31 +45,73 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="number"
             android:gravity="center"
-            android:text="0"/>
+            android:inputType="number"
+            android:text="0" />
 
         <EditText
             android:id="@+id/editText2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="number"
             android:gravity="center"
-            android:text="0"/>
+            android:inputType="number"
+            android:text="0" />
 
         <TextView
             android:id="@+id/tvResult"
-            android:text="= 0"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:text="= 0" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/btnCalculate"
-        android:text="Calculate"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Calculate" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="I agree" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:checkedButton="@+id/rbPlus">
+
+        <RadioButton
+            android:id="@id/rbPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            />
+
+        <RadioButton
+            android:id="@+id/rbMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:layout_marginLeft="16dp"/>
+
+        <RadioButton
+            android:id="@+id/rbMultiply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:layout_marginLeft="16dp"/>
+
+        <RadioButton
+            android:id="@+id/rbDivide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:layout_marginLeft="16dp"/>
+    </RadioGroup>
+
 </LinearLayout>
