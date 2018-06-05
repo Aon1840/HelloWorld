@@ -125,19 +125,22 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
+        <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:src="@drawable/ic_launcher"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent" />
 
-        <ImageView
+        <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:src="@drawable/ic_launcher"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:scaleType="fitXY" />
 
     </LinearLayout>
 </LinearLayout>
