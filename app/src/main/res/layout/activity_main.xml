@@ -18,7 +18,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:background="@drawable/ninepatch_lab"/>
 
     <EditText
         android:id="@+id/edT2"
@@ -47,7 +48,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:inputType="number"
-            android:text="0" />
+            android:text="0"
+            android:background="@drawable/ninepatch_lab"/>
 
         <EditText
             android:id="@+id/editText2"
@@ -56,7 +58,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:inputType="number"
-            android:text="0" />
+            android:text="0"
+            android:background="@drawable/ninepatch_lab"/>
 
         <TextView
             android:id="@+id/tvResult"
@@ -132,7 +135,7 @@
             android:src="@drawable/ic_launcher"
             android:layout_weight="1"
             android:scaleType="fitXY"
-            android:background="@android:color/transparent" />
+            android:background="@drawable/btn_default_normal" />
 
         <com.inthecheesefactory.thecheeselibrary.widget.AdjustableImageButton
             android:layout_width="0dp"
