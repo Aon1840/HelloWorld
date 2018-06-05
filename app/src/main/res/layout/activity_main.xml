@@ -132,6 +132,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:indeterminate="true" />
+            
+            <com.example.aon_attapon.helloworld.CustomView
+                android:layout_width="match_parent"
+                android:layout_height="160dp" />
 
             <View
                 android:layout_width="match_parent"
