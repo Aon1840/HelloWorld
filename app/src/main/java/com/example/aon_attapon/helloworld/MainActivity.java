@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editText1, editText2;
     Button btnCopy, btnCalculate;
     RadioGroup rgOperator;
+    CustomViewGroup viewGroup1,viewGroup2;
 
 
     @Override
@@ -69,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
         tvResult = (TextView) findViewById(R.id.tvResult);
         btnCalculate = (Button) findViewById(R.id.btnCalculate);
         rgOperator = (RadioGroup) findViewById(R.id.rgOperator);
+        viewGroup1 = (CustomViewGroup) findViewById(R.id.viewGroup1);
+        viewGroup2 = (CustomViewGroup) findViewById(R.id.viewGroup2);
+
+        viewGroup1.setButtonText("Hello");
+        viewGroup2.setButtonText("World");
 
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
