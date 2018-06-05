@@ -1,9 +1,11 @@
 package com.example.aon_attapon.helloworld;
 
+import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
+import android.view.Display;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,6 +30,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initInstances();
+
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int width = size.x; //screen width
+        int height = size.y; //screen height
+
+        Toast.makeText(MainActivity.this,"Width = "+width+", Height = "+height,Toast.LENGTH_LONG).show();
     }
 
     private void initInstances() {
