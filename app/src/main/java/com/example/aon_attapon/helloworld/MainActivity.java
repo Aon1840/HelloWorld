@@ -120,6 +120,18 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 intent.putExtra("result",sum);
+
+                //Playground
+                Coordinate c1 = new Coordinate();
+                c1.x = 5;
+                c1.y = 10;
+                c1.z = 20;
+                Bundle bundle = new Bundle();
+                bundle.putInt("x", c1.x);
+                bundle.putInt("y", c1.y);
+                bundle.putInt("z", c1.z);
+                intent.putExtra("cBundle",bundle);
+
                 startActivity(intent);
             }
         });
