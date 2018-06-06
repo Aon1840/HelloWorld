@@ -1,5 +1,6 @@
 package com.example.aon_attapon.helloworld;
 
+import android.content.Intent;
 import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editText1, editText2;
     Button btnCopy, btnCalculate;
     RadioGroup rgOperator;
-    CustomViewGroup viewGroup1,viewGroup2;
+    CustomViewGroup viewGroup1, viewGroup2;
 
 
     @Override
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         int width = size.x; //screen width
         int height = size.y; //screen height
 
-        Toast.makeText(MainActivity.this,"Width = "+width+", Height = "+height,Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, "Width = " + width + ", Height = " + height, Toast.LENGTH_LONG).show();
     }
 
     private void initInstances() {
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int val1 = 0;
                 int val2 = 0;
-                int sum=0;
+                int sum = 0;
 
                 try {
                     val1 = Integer.parseInt(editText1.getText().toString());
@@ -114,8 +115,12 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 tvResult.setText(sum + "");
-                Log.d("Calculation","Result = "+sum);
-                Toast.makeText(MainActivity.this,"Result = "+sum,Toast.LENGTH_SHORT).show();
+                Log.d("Calculation", "Result = " + sum);
+                Toast.makeText(MainActivity.this, "Result = " + sum, Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra("result",sum);
+                startActivity(intent);
             }
         });
     }
@@ -129,8 +134,8 @@ public class MainActivity extends AppCompatActivity {
     //handle click button
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.action_settings){
-            Toast.makeText(MainActivity.this,"onOptionItemSelected is running",Toast.LENGTH_LONG).show();
+        if (item.getItemId() == R.id.action_settings) {
+            Toast.makeText(MainActivity.this, "onOptionItemSelected is running", Toast.LENGTH_LONG).show();
             return true;
         }
         return super.onOptionsItemSelected(item);
