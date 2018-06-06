@@ -139,6 +139,13 @@ public class MainActivity extends AppCompatActivity {
                 c2.z = 20;
                 intent.putExtra("cSerializable",c2);
 
+                //Parcelable
+                CoordinateParcelable c3 = new CoordinateParcelable();
+                c3.x = 5;
+                c3.y = 10;
+                c3.z = 20;
+                intent.putExtra("cParcelable", c3);
+
                 startActivity(intent);
             }
         });
