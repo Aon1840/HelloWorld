@@ -134,6 +134,8 @@
                 android:layout_height="wrap_content"
                 android:indeterminate="true" />
 
+            <include layout="@layout/sample_bar" />
+
             <com.example.aon_attapon.helloworld.CustomViewGroup
                 android:id="@+id/viewGroup1"
                 android:layout_width="match_parent"
