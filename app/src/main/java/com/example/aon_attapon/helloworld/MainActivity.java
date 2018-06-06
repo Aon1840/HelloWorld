@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 c3.z = 20;
                 intent.putExtra("cParcelable", c3);
 
-                startActivity(intent);
+//                startActivity(intent);
             }
         });
     }
@@ -165,5 +165,39 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        //save all thingut
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        //restore all thing from method onSaveInstanceState
+
     }
 }
