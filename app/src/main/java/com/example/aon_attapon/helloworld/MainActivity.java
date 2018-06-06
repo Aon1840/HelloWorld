@@ -132,6 +132,13 @@ public class MainActivity extends AppCompatActivity {
                 bundle.putInt("z", c1.z);
                 intent.putExtra("cBundle",bundle);
 
+                //Serializable Lab
+                CoordinateSerializeble c2 = new CoordinateSerializeble();
+                c2.x = 5;
+                c2.y = 10;
+                c2.z = 20;
+                intent.putExtra("cSerializable",c2);
+
                 startActivity(intent);
             }
         });
