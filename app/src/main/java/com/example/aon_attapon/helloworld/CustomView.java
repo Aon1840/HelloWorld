@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -139,5 +141,26 @@ public class CustomView extends View {
                 return true;
         }
         return super.onTouchEvent(event);
+    }
+
+    @Nullable
+    @Override
+    protected Parcelable onSaveInstanceState() {
+//        return super.onSaveInstanceState(); //old: like a sample box can not put anything to this box
+        Parcelable superState = super.onSaveInstanceState();
+        BundleSavedState savedState = new BundleSavedState(superState);
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("isBlue",isBlue);
+        savedState.setBundle(bundle);
+
+        return savedState;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        BundleSavedState saveState = (BundleSavedState) state;
+        super.onRestoreInstanceState(saveState.getSuperState());
+        Bundle bundle = saveState.getBundle();
+        isBlue = bundle.getBoolean("isBlue");
     }
 }

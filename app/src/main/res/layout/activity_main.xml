@@ -167,10 +167,12 @@
                 fancy:fb_textColor="#FFFFFF" />
 
             <com.example.aon_attapon.helloworld.CustomView
+                android:id="@+id/view1"
                 android:layout_width="match_parent"
                 android:layout_height="160dp" />
 
             <com.example.aon_attapon.helloworld.CustomView
+                android:id="@+id/view2"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 app:isBlue="true" />
