@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 c3.z = 20;
                 intent.putExtra("cParcelable", c3);
 
-//                startActivity(intent);
+                startActivity(intent);
             }
         });
     }

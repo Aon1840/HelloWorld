@@ -3,6 +3,8 @@ package com.example.aon_attapon.helloworld;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
@@ -26,11 +28,27 @@ public class SecondActivity extends AppCompatActivity {
 
         CoordinateParcelable c3 = intent.getParcelableExtra("cParcelable");
 
+
         inintInstance();
     }
 
     private void inintInstance() {
         TextView tvResult_Second = (TextView) findViewById(R.id.tvResult_Second);
         tvResult_Second.setText(sum+"");
+
+        //Lab90 Terminate Activity
+        Button btnOK = (Button) findViewById(R.id.btnOK);
+
+        btnOK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(SecondActivity.this, MainActivity.class);
+//                startActivity(intent);
+                finish();
+            }
+        });
+
     }
+
+
 }
