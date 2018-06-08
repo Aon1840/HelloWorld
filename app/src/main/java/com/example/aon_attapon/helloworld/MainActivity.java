@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     CustomViewGroup viewGroup1, viewGroup2;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,9 +147,23 @@ public class MainActivity extends AppCompatActivity {
                 c3.z = 20;
                 intent.putExtra("cParcelable", c3);
 
-                startActivity(intent);
+                startActivityForResult(intent,12345);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //Check if it is a result for SecondActivity
+        if (requestCode == 12345){
+            if(resultCode == RESULT_OK){
+                //Get data from extra
+                String res = data.getStringExtra("result");
+
+                Toast.makeText(MainActivity.this,"ข้อความ : "+res,Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     @Override
