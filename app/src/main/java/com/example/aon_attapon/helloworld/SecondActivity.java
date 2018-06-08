@@ -61,5 +61,9 @@ public class SecondActivity extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+    }
 }

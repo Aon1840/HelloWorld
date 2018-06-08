@@ -32,14 +32,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.welcome);
+        setContentView(R.layout.activity_main);
 
         if (getResources().getBoolean(R.bool.portrait_only)){
             //Fix orientation for mobile only
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
 
-//        initInstances();
+        initInstances();
 
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -155,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("cParcelable", c3);
 
                 startActivityForResult(intent,12345);
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
             }
         });
     }
